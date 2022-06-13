@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Formulář</title>
+    <script src="zverimex.js">
+    
+    </script>
+</head>
+<body>
+    <fieldset id="formular_objednavka">
+    <legend>
+        <h2>Objednávka krmiva:</h2>
+    </legend>
+    <div class="container">
+    <form name="formular">
+        <div id="roleta">
+        <h3>Vyberte druh krmiva a počet kg: </h3>
+        <select name="druhKrmiva">
+            <option value="150"> Psí žrádlo 150 Kč/kg</option>
+            <option value="120"> Kočičí žrádlo 120 Kč/kg</option>
+            <option value="50"> Žrádlo pro rybičky 50 Kč/kg</option>
+            <option value="800"> Žrádlo pro tygra 800 Kč/kg</option>
+        </select>
+        <label for="pocetKg">kg:</label>
+        <input type="text" id="pocetKg" size="3">
+
+        </div>
+        <div id="cenaprubezna">
+        <label for="pocetKg">Průběžná cena: </label>
+        <input type="text" id="prubeznaCena" size="10" onclick="prubeznaCenaF()"> Kč
+        </div>
+        <div class="vlastnosti">
+        <h3>Vlastnosti krmiva: </h3>
+        <input type="checkbox" name="kvalita" id="bio"> Bio kvalita (+30%)<br>
+        <input type="checkbox" name="kvalita" id="premium"> Extra premium kvalita (+50%)<br>
+        <input type="checkbox" name="kvalita" id="nekvalitni"> Extra nekvalita pro chudé (-15%)<br>
+        <input type="checkbox" name="kvalita" id="darkove"> Dárkové balení (+500 Kč)<br>
+        </div>
+        <div id="transport">
+        <h3>Typ dopravy: </h3>
+        <input type="radio" name="doprava" id="osobni" onclick="cenaF()"> Osobní odběr (bez příplatku)<br>
+        <input type="radio" name="doprava" id="kuryr" onclick="cenaF()"> Firemní kurýr (+10% z aktuální ceny krmiva)<br>
+        <input type="radio" name="doprava" id="posta" onclick="cenaF()"> Česká pošta (+250 Kč)<br>
+        </div>
+        <div id="cena">
+        <h3>Výsledná cena krmiva</h3>
+        <p id="vyslednaCena"></p>
+        <h3>Kolik peněz máte k dispozici?</h3>
+        <input type="text" id="prostredky">
+        <button type="button" id="dostupnost" onclick="odpoved()">Mám dostatek peněz?</button>
+        <p id="vysledekDostupnosti"></p>
+        </div>
+        <div id="mail">
+        <label for ="kontakt">Váš e-mail:</label>
+            <input type="mail" id="maill" onblur="validace()"> @gmail.com
+            <p id="text-validace"></p>
+         </form>
+    </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        //overeni zadavani z klavesnice
+        $("#maill").keypress(function (event) {
+      let znak = event.which;
+      let overZnak = false;
+      if (znak == 32) { overZnak = true; }
+      else if (48 <= znak && znak <= 57) { overZnak = true; }
+      else if (65 <= znak && znak <= 90) { overZnak = true; }
+      else if (97 <= znak && znak <= 122) { overZnak = true; }
+      return overZnak;
+  });
+
+</script>
+</div>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color:#181d3b;
+    background-color:#AED5FB;
+    margin:auto;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+fieldset {
+    margin:10px;
+    border:2px dashed #F0F0F0;
+}
+
+.container {
+    display:flex;
+    margin-left:auto;
+    margin-right: auto;
+    padding:50px;
+    flex-direction: row;
+}
+
+#roleta {
+    order:1;
+}
+
+#cenaprubezna {
+    order:2;
+}
+
+#vlastnosti {
+    order:3;
+}
+
+
+#transport {
+    order:4;
+}
+
+#cena {
+    order:5;
+}
+
+#mail {
+    order:6;
+}
+
+#vyslednaCena {
+    line-height: 50px;
+    font-size:1.3rem;
+}
+
+input, select, button {
+    font-size:1rem;
+    color:#3A478F;;
+    margin-top:10px;
+    border:2px solid #3A478F;
+    background:#F0F0F0;
+    padding:5px;
+    border-radius: 3px;
+}
